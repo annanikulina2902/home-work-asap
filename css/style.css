@@ -6,8 +6,6 @@ body {
     width: 100%;
     max-width: 940px;
     margin: 0 auto;
-    padding-left: 30px;
-    padding-right: 30px;
 
 }
 
@@ -23,11 +21,6 @@ body {
     box-sizing: border-box;
 }
 
-.wrap {
-    display: flex;
-    justify-content: space-between;
-    padding-top: 71px;  
-}
 .title-main {
     font-size: 36px;
     font-weight: 500;
@@ -41,9 +34,10 @@ body {
     justify-content: space-between;
     font-size: 12px;
     max-height: 76px;
+    padding-left: 20px;
 }
 .nav>li {
-    padding: 0px 15px;
+    margin: 0 auto;
 }
 a {
     text-decoration: none;
@@ -65,9 +59,9 @@ a:hover {
     align-items:center;
     justify-content: center;
     margin: 0 auto;
+    padding-top: 71px;
 }
 .desc {
-    max-width: 940px;
     margin: 0 auto;
     padding-left: 30px;
     padding-right: 30px;
@@ -90,18 +84,19 @@ a:hover {
 }
 .desc_photo {
     display:block;
-    width: 481px;
-    padding-left: 128px;
+    max-width: 481px;
+    width: 100%;
 }
 .photo {
     display: block;
-    max-width: 100%;
     margin: 0 auto;
     height: 635px;
-    background-image: url(../img/back.png);
+    max-width: 481px;
+    max-height: 635px;
+    padding-right: 40px;
     background-size: cover;
-    object-fit: cover; 
-object-position: bottom; 
+    object-fit: cover;
+    
 
 }
 .main {
@@ -173,11 +168,9 @@ object-position: bottom;
 .post img {
     max-width: 270px;
     max-height: 440px;
-    margin-left: 50px;
     padding-right: 40px;
     background-size: cover;
     object-fit: cover; 
-object-position: bottom; 
 }
 
 .post__heading-h {
@@ -219,6 +212,22 @@ object-position: bottom;
     }
     .page {
         width: 100%;
-        padding: 0px 16px;
+        padding-left: 50px;
+        padding-left: 50px;
+        margin: 0 auto;
     }
+    .page-top {
+        display: flex;
+        flex-direction: column;
+    }
+    .posts {
+        display: flex;
+        flex-direction: column;
+
+    }
+    .post {
+        display: flex;
+        flex-direction: column;
+    }
+
 }
