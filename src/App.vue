@@ -1,17 +1,28 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <TheHeader></TheHeader>
+    <MainSection></MainSection>
+    <TheSkills></TheSkills>
+    <ThePosts></ThePosts>
+    <TheFooter></TheFooter>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import TheHeader from "./components/Header/TheHeader.vue";
+import MainSection from "./components/MainSection/MainSection.vue";
+import TheSkills from "./components/TheSkills/TheSkills.vue";
+import ThePosts from "./components/ThePosts/ThePosts.vue";
+import TheFooter from "./components/TheFooter/TheFooter.vue";
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    TheHeader,
+    MainSection,
+    TheSkills,
+    ThePosts,
+    TheFooter
   }
 }
 </script>
