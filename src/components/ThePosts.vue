@@ -5,7 +5,9 @@
                 <a href="#" class="btn__h">All posts</a>
             </div>
             <div class="post">
-                <img src="/img/kot1.jpg" alt="">
+                <div class="post_photo">
+                    <img src="../assets/kot1.jpg" alt="">
+                </div>
                 <div class="post_text">
                     <div class="post__heading">
                         <div class="post__heading-h">
@@ -23,7 +25,9 @@
 
             </div>
             <div class="post">
-                <img src="/img/kot1.jpg" alt="">
+                <div class="post_photo">
+                    <img src="../assets/kot1.jpg" alt="">
+                </div>
                 <div class="post_text">
                     <div class="post__heading">
                         <div class="post__heading-h">
@@ -42,7 +46,9 @@
             </div>
 
             <div class="post">
-                <img src="/img/kot1.jpg" alt="">
+                <div class="post_photo">
+                    <img src="../assets/kot1.jpg" alt="">
+                </div>  
                 <div class="post_text">
                     <div class="post__heading">
                         <div class="post__heading-h">

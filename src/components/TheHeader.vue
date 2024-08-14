@@ -1,5 +1,5 @@
 <template>
-        <header>
+    <header>
         <div class="header">
             <a href="#" class="logo">
                 <span class="logo_img"></span>

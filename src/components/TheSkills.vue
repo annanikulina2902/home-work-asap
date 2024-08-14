@@ -1,5 +1,5 @@
 <template>
-            <section class="main-skills">
+        <section class="main-skills">
             <h1 class="title-main">Skills</h1>
             <div class="accordion"> 
                 <div class="tab">

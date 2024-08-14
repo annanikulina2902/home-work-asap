@@ -1,0 +1,45 @@
+.header {
+    width: 100%;
+    min-height: 75px;
+    margin: 0 auto;
+    padding-left: 30px;
+    padding-right: 30px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav {
+    display: flex;
+    list-style-type: none;
+    justify-content: space-between;
+    font-size: 12px;
+    .li {
+        margin: 0 auto;
+    }
+}
+
+a {
+    text-decoration: none;
+    color: #6E38F7;
+    margin-left: 14px;
+}
+
+a:hover {
+    text-decoration: underline;
+   }
+
+.logo_img {
+    display: block;
+    width: 36px;
+    height: 36px;
+    background-image: url(/src/assets/Logo.svg);
+}
+
+@media (max-width:360px) {
+    .header {
+        display: flex;
+        flex-direction: column;
+        }
+    
+    
+}

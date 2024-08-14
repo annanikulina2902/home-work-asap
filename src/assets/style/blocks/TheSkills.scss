@@ -1,0 +1,44 @@
+.accordion {
+    padding-left: 30px;
+    position: relative;
+    display: block;
+    
+
+}
+
+.tab input, .tab-content { 
+    display: none; 
+}
+
+.tab {
+ font-size: 18px;
+ font-weight: 500;
+ border: 1px solid #6E38F7;
+ border-radius: 3px;
+ margin-bottom: 10px;
+ max-width: 940px;
+}
+.tab-title {
+ padding: 20px; 
+ display: block; 
+ cursor: pointer; 
+}
+.tab-title::after {
+ content: '+';
+ float: right; 
+ color: #6E38F7;
+}
+.tab-content {
+ padding: 20px 20px; 
+ font-size: 16px;
+ font-weight: 400;
+}
+.tab :checked + .tab-title {
+ border-radius: 3px 3px 0 0; 
+}
+.tab :checked + .tab-title::after {
+ content: '-';
+}
+.tab :checked ~ .tab-content {
+ display: block; 
+}

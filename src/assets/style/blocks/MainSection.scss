@@ -1,0 +1,47 @@
+.page-top {
+    display:flex;
+    align-items:center;
+    justify-content: center;
+    margin: 0 auto;
+    padding-top: 71px;
+}
+.description {
+    margin: 0 auto;
+
+    h1 {
+        font-size: 58px;
+        font-weight: 500;
+        line-height: 68px;
+    }
+    p {
+        color: #95A1BB;
+        padding-top: 106px;
+        font-weight: 400;
+    }
+    h2 {
+        color: #6E38F7;
+        font-weight: 500;
+        font-size: 12px;
+        padding-top: 213px;
+    }
+}
+
+ 
+
+.description_photo{
+    display: block;
+    height: 635px;
+    max-width: 481px;
+    max-height: 635px;
+    padding-right: 40px;
+    background-size: cover;
+    object-fit: cover;
+    
+
+}
+
+@media(max-width:360px) {
+    .body {
+        max-width: 360px;
+    }
+}
