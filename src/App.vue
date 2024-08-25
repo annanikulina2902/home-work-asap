@@ -1,19 +1,37 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <ul>
+      <AccordionList v-for="item in lists" v-bind:key="item.title" :item="item" :list="lists.list" :title="lists.title"/>
+    </ul>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import AccordionList from './components/AccordionList.vue';
 
 export default {
   name: 'App',
-  components: {
-    HelloWorld
+  components: { AccordionList },
+
+    data() {
+      return{
+        lists:[
+          {
+            title:'Book',
+            list: ['book 1', 'book 2', 'book 3'],
+          },
+          {
+            title:'Films',
+            list: ['film 1', 'film 2', 'film 3'],
+          },
+        ],
+      }
+    },
+
+
+
   }
-}
+
 </script>
 
 <style>
