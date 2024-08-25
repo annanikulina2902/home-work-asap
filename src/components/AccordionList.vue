@@ -1,10 +1,7 @@
 <template>
     <div class="container">
-        <ul v-show="isActive">
-            <button class="button" @click="toggle">Show {{ item.title }}</button>
-        </ul>
-        <div v-show="isActive" class="content">
-            <AccordionItem v-for="item in lists" v-bind:key="item.title" :item="item" :list="lists.list" :title="lists.title"/>
+        <div v-for="item in lists" v-bind:key="item.title" class="content">
+            <AccordionItem :list="item.list" :title="item.title"/>
         </div>
     </div>
 </template>
@@ -18,20 +15,10 @@ export default {
         AccordionItem,
     },
     props: {
-        item: String,
-        list: String,
-        title: String,
+        lists: [{ 
+            title: String, 
+            list: [String]}], 
     },
-    data() {
-        return{
-            isActive:true,
-        }
-    },
-    methods:{
-        toggle(){
-            this.isActive = !this.isActive
-        }
-    }
 }
 </script>
 

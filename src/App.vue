@@ -1,10 +1,9 @@
 <template>
   <div id="app">
-    <ul>
-      <AccordionList v-for="item in lists" v-bind:key="item.title" :item="item" :list="lists.list" :title="lists.title"/>
-    </ul>
+    <AccordionList :lists="lists"/>
   </div>
 </template>
+
 
 <script>
 import AccordionList from './components/AccordionList.vue';
