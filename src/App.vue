@@ -26,11 +26,7 @@ export default {
         ],
       }
     },
-    methods:{
-        toggle(){
-            this.isActive = !this.isActive
-        }
-    }
+    
 
 
   }
