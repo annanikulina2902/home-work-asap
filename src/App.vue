@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <AccordionList :lists="lists"/>
+    <AccordionList v-for="item in lists" v-bind:key="item.title" :item="item"/>
   </div>
 </template>
 
@@ -26,7 +26,11 @@ export default {
         ],
       }
     },
-
+    methods:{
+        toggle(){
+            this.isActive = !this.isActive
+        }
+    }
 
 
   }
