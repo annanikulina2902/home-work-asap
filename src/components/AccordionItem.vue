@@ -12,7 +12,7 @@
     export default {
         name: 'AccordionComponent',
         props: {
-            list: String
+            list: [String]
         },
         
     }

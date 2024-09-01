@@ -16,7 +16,7 @@ export default {
         AccordionItem,
     },
     props: {
-        list: [{ 
+        item: [{ 
             title: String, 
             list: [String]}], 
     },
@@ -25,7 +25,7 @@ export default {
                 isActive:true,
             }
         },
-        methods:{
+    methods:{
         toggle(){
             this.isActive = !this.isActive
         }

@@ -1,6 +1,7 @@
 <template>
   <div id="app">
-    <AccordionList v-for="item in lists" v-bind:key="item.title" :item="item"/>
+      <AccordionList v-for="item in lists" v-bind:key="item.title" :item="item"/>
+    
   </div>
 </template>
 
@@ -23,6 +24,7 @@ export default {
             title:'Films',
             list: ['film 1', 'film 2', 'film 3'],
           },
+          
         ],
       }
     },
