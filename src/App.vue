@@ -1,7 +1,7 @@
 <template>
-  <div id="app">
+  <div id="app" :class="{'__dark': isDark}">
       <AccordionList v-for="item in lists" v-bind:key="item.title" :item="item"/>
-    
+      <button class="DarkTheme" @click="dark">Темная тема</button>
   </div>
 </template>
 
@@ -15,19 +15,26 @@ export default {
 
     data() {
       return{
+        isDark: false,
         lists:[
           {
-            title:'Book',
-            list: ['book 1', 'book 2', 'book 3'],
+            title:'Винсент Ван Гог',
+            list: ['Подсолнухи', 'Звездная ночь', 'Едоки Картофеля'],
           },
           {
-            title:'Films',
-            list: ['film 1', 'film 2', 'film 3'],
+            title:'Клод Оскар Моне',
+            list: ['Завтрак на траве', 'Отлив в Пурвилле', 'Завтрак на траве'],
           },
-          
-        ],
+        ],  
       }
+      
     },
+    
+    methods:{
+      dark(){
+            this.isDark = !this.isDark;
+        },
+    }
     
 
 
@@ -37,11 +44,25 @@ export default {
 
 <style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
   margin-top: 60px;
+  position: relative;
+	width: 100%;
+  cursor: pointer;
 }
+  .container {
+      background-color: #ffffff;
+      color: #A60000;
+    
+
+  }
+  .isDark {
+    background-color: #000000;
+    color: #ffffff;
+  }
+  .isDark .DarkTheme{
+      background-color: #000000;
+      color: #ffffff;
+    }
+
 </style>
