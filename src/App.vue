@@ -1,7 +1,8 @@
 <template>
-  <div id="app" :class="{'__dark': isDark}">
+  <div :class="{'dark': isDark}" class="app" >
+    
       <AccordionList v-for="item in lists" v-bind:key="item.title" :item="item"/>
-      <button class="DarkTheme" @click="dark">Темная тема</button>
+      <button class="btnTheme"  @click="darkTheme">Темная тема</button>
   </div>
 </template>
 
@@ -11,6 +12,7 @@ import AccordionList from './components/AccordionList.vue';
 
 export default {
   name: 'App',
+  
   components: { AccordionList },
 
     data() {
@@ -23,46 +25,55 @@ export default {
           },
           {
             title:'Клод Оскар Моне',
-            list: ['Завтрак на траве', 'Отлив в Пурвилле', 'Завтрак на траве'],
+            list: ['Завтрак на траве', 'Отлив в Пурвилле', 'Завтрак на травеx'],
           },
-        ],  
+          
+        ],
       }
-      
     },
     
     methods:{
-      dark(){
+      darkTheme(){
             this.isDark = !this.isDark;
-        },
+        }
     }
-    
-
 
   }
 
 </script>
 
+
+
 <style>
-#app {
+.app {
   text-align: center;
   margin-top: 60px;
   position: relative;
 	width: 100%;
   cursor: pointer;
+  list-style: none; 
+  width: 100%;
+  max-height: 400px;
+  color: #000000;
 }
-  .container {
-      background-color: #ffffff;
-      color: #A60000;
-    
-
-  }
-  .isDark {
+  .dark {
     background-color: #000000;
-    color: #ffffff;
+    color: #cb00bd;
   }
-  .isDark .DarkTheme{
-      background-color: #000000;
+
+    .btnTheme {
+      background-color: #036b9f;
       color: #ffffff;
     }
-
+    .dark .btnTheme {
+      background-color: #001e98;
+      color: rgb(255, 255, 255);
+    }
+    .list {
+      color: #037fb5;
+      list-style-type: none;
+    }
+    .dark .list {
+      color: #ed71c6;
+    }
 </style>

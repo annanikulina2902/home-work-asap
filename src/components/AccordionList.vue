@@ -1,10 +1,12 @@
 <template>
-    <div class="container" >
+    <li class="container">
         <h2 @click="toggle"> {{ item.title }}</h2>
         <ul v-show="isActive">
             <AccordionItem v-for="list in item.list" v-bind:key="list" :list="list" />
         </ul>
-    </div>
+        
+    </li>
+   
 </template>
 
 <script>
@@ -19,7 +21,6 @@ export default {
         item: [{ 
             title: String, 
             list: [String]}], 
-
     },
     data() {
             return{
@@ -29,10 +30,7 @@ export default {
     methods:{
         toggle(){
             this.isActive = !this.isActive
-        },
+        }
     }
 }
 </script>
-
-
-

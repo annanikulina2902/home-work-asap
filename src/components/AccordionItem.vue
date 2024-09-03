@@ -18,10 +18,3 @@
     }
 </script>
 
-<style scoped>
-    .list {
-        list-style-type: none;
-        color: #E8A8EB;
-
-    }
-</style>
