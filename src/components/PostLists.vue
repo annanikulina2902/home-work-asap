@@ -12,6 +12,7 @@
 
 <script>
 import axios from 'axios';
+
 import axiosOption from '../axios';
 
 const axiosApiInstance = axios.create(axiosOption);
@@ -26,8 +27,8 @@ export default {
     async created(){
         try{
             let response = await axiosApiInstance.get('blog/api/posts')
-                this.post = response.data.data,
-                console.log('posts:', this.posts)
+                this.post = response.data.data
+                console.log('post:', this.post)
         } catch(error) {
                 console.error('Ошибка', error);
         }
