@@ -20,15 +20,20 @@ const axiosApiInstance = axios.create(axiosOption);
 
 export default {
     name: 'App',
-    props: {
-        posts: []
-    },
+    data() {
+        return {
+            posts: [],
+    }
+        },
+        
+    
+   
 
     async created(){
         try{
             let response = await axiosApiInstance.get('blog/api/posts')
-                this.post = response.data.data
-                console.log('post:', this.post)
+                this.posts = response.data.data
+                console.log('posts:', this.posts)
         } catch(error) {
                 console.error('Ошибка', error);
         }
