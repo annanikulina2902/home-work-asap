@@ -30,7 +30,7 @@ export default {
    
     
    
-    mounted() {
+    async created() {
         axios.get(`http://vseverske.ru/blog/api/post/${this.id}`)
         .then(response => {
             this.posts = response.data.data;
@@ -44,7 +44,11 @@ export default {
 
     
     }
-    } 
+
+    }
+     
+        
+    
  
         
         

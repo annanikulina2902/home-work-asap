@@ -24,7 +24,7 @@ export default {
             posts: []
         }
         },
-    mounted() {
+    async created() {
         axios.get('http://vseverske.ru/blog/api/posts')
         .then(response => {
             this.posts = response.data.data;

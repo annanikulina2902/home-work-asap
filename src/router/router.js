@@ -21,7 +21,7 @@ export  default new Router({
                     path: "/post/:id",
                     name: "PostItem",
                     component: PostItem,
-                    props: true
+                    props: true,
                  }, 
                  { path: "*", 
                    redirect: "/posts",
