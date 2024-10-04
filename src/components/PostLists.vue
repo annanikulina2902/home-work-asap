@@ -1,55 +1,48 @@
 <template>
-    <header>
+    <div>
 
-        <h2>Названия постов</h2>
-        <ul class="item" v-if="posts.length" > 
-            <li class="lists" v-for="post in posts" :key="post.id">
+        <h1>Названия постов</h1>
+        <ul > 
+            <li v-for="post in posts" :key="post.id" class="item">
                 <router-link to="{name: 'PostItem', params: {id: post.id}}">
-                <h3>{{ post.title }} </h3> 
-            </router-link>
+                    {{ post.title }} 
+                </router-link>
             </li>
         </ul>
-        <p v-else>Загрузка</p>
-    </header>
+
+    </div>
 
 </template>
 
 <script>
 import axios from 'axios';
 
-import axiosOption from '../axios';
-
-const axiosApiInstance = axios.create(axiosOption);
-
-
 export default {
     name: 'PostLists',
     data() {
         return {
-            posts: [],
-    }
+            posts: []
+        }
         },
-    created() {
-        this.fetchPosts();
-    }, 
+    mounted() {
+        axios.get('http://vseverske.ru/blog/api/posts')
+        .then(response => {
+            this.posts = response.data.data;
+            console.log(response.data);
+        })
+        .catch(error => {
+            console.erroe('Ошибка:', error);
+        }
+
+        )
+
     
-   
-    methods: {
-        async fetchPosts(){
-        try{
-            let response = await axiosApiInstance.get('http://vseverske.ru/blog/api/posts');
-                this.posts = response.data.data
-                console.log('posts:', this.posts)
-        } catch(error) {
-                console.error('Ошибка при загрузки постои', error);
-        }
-
-
-        }
-    } 
+    }
+    
+    
     
  
-        
+       //'http://vseverske.ru/blog/api/posts 
         
     
     

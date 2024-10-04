@@ -12,14 +12,20 @@ Vue.use(Router)
 export  default new Router({
         mode: "history",
         routes: [
-                { path: "/posts", name: "PostLists", component: PostLists },
                 { 
-                    path: "/post/",
+                    path: "/posts", 
+                    name: "PostLists", 
+                    component: PostLists 
+                },
+                { 
+                    path: "/post/:id",
                     name: "PostItem",
                     component: PostItem,
                     props: true
                  }, 
-                 { path: "*", redirect: "/posts"},
+                 { path: "*", 
+                   redirect: "/posts",
+                },
         ]
 
     });

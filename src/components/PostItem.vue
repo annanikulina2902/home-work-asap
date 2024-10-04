@@ -1,53 +1,49 @@
 <template>
-    <header>
-        
+    <div>
         <nav><router-link to="/posts">Название поста</router-link></nav>
- 
-            <ul class="item"> 
-            <li class="lists" v-if="post">
+        <div class="item" v-if="post"> 
+            <li>
                 <h3>{{ post.title }} </h3> 
                 <p>{{ post.description }} </p>  
             </li>
-            <p v-else>Загрузка</p>
-        </ul>
+            
+        </div>
+        <p v-else>Загрузка</p>
+    </div>
         
-    </header>
-
 </template>
 
 <script>
 import axios from 'axios';
 
-import axiosOption from '../axios';
 
-const axiosApiInstance = axios.create(axiosOption);
 
 
 export default {
     name: 'PostsItem',
-    props: ["id"],
+    props: ['id'],
     data() {
         return {
-            post: [],
+            post: null
     }
         },
-        created() {
-        this.fetchPost();
-    }, 
+   
     
    
-    methods: {
-        async fetchPost(){
-        try{
-            let response = await axiosApiInstance.get('http://vseverske.ru/blog/api/post/{id}')
-                this.posts = response.data.data;
-                console.log('posts:', this.posts)
-        } catch(error) {
-                console.error('Ошибка при загрузки постоа', error);
+    mounted() {
+        axios.get(`http://vseverske.ru/blog/api/post/${this.id}`)
+        .then(response => {
+            this.posts = response.data.data;
+            console.log(response.data);
+        })
+        .catch(error => {
+            console.erroe('Ошибка:', error);
         }
 
+        )
 
-        }
+    
+    }
     } 
  
         
@@ -56,7 +52,7 @@ export default {
     
     
         
-    }
+
 
 
 
