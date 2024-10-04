@@ -2,10 +2,10 @@
     <div>
         <nav><router-link to="/posts">Название поста</router-link></nav>
         <div class="item" v-if="post"> 
-            <li>
+        
                 <h3>{{ post.title }} </h3> 
                 <p>{{ post.description }} </p>  
-            </li>
+            
             
         </div>
         <p v-else>Загрузка</p>
@@ -20,13 +20,13 @@ import axios from 'axios';
 
 
 export default {
-    name: 'PostsItem',
+    
     props: ['id'],
     data() {
         return {
             post: null
-    }
-        },
+        };
+    },
    
     
    
@@ -37,7 +37,7 @@ export default {
             console.log(response.data);
         })
         .catch(error => {
-            console.erroe('Ошибка:', error);
+            console.error('Ошибка:', error);
         }
 
         )

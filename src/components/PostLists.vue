@@ -4,7 +4,7 @@
         <h1>Названия постов</h1>
         <ul > 
             <li v-for="post in posts" :key="post.id" class="item">
-                <router-link to="{name: 'PostItem', params: {id: post.id}}">
+                <router-link :to="{ name: 'PostItem', params: {id: post.id}}">
                     {{ post.title }} 
                 </router-link>
             </li>
