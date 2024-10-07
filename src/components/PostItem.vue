@@ -1,9 +1,9 @@
 <template>
-    <div>
-        <nav><router-link to="/posts">Название поста</router-link></nav>
-        <div class="item" v-if="post"> 
+    <div class="content">
+        <nav><router-link to="/posts" class="title">Название поста</router-link></nav>
+        <div v-if="post"> 
         
-                <h3>{{ post.title }} </h3> 
+                <h2>{{ post.title }} </h2> 
                 <p>{{ post.description }} </p>  
             
             
@@ -14,7 +14,7 @@
 </template>
 
 <script>
-import axios from 'axios';
+import axiosInstance from '@/axios';
 
 
 
@@ -31,9 +31,9 @@ export default {
     
    
     async created() {
-        axios.get(`http://vseverske.ru/blog/api/post/${this.id}`)
+        axiosInstance.get(`/post/${this.id}`)
         .then(response => {
-            this.posts = response.data.data;
+            this.post = response.data.data;
             console.log(response.data);
         })
         .catch(error => {
@@ -62,19 +62,28 @@ export default {
 
 </script>
 
-<style scoped>
-    .title {
-        text-align: center;
-        color: rgb(255, 180, 193);
-        font-size: 30px;
-    }
-    .item {
-        list-style-type: none;
-        padding: 50px;
-        color: rgb(255, 27, 171)
-        
-    }
-    .lists {
-        padding: 10px;
-    }
+
+<style lang="scss" scoped >
+$text-color: #b10000;
+$title-color: #1d1d1d;
+$title-size: 30px;
+$text-title: 20px;
+
+
+.content {
+    padding: 50px;
+}
+.title {
+    text-decoration: none;
+    color: $title-color;
+    font-size: $title-size;
+    
+}
+h2 {
+    color: $text-color;
+}
+p {
+    color: $text-color;
+}
+
 </style>

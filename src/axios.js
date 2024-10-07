@@ -1,8 +1,8 @@
+import axios from "axios";
 
-
-const axiosOption = {
+const axiosInstance = axios.create({
+    baseURL: 'http://vseverske.ru/blog/api/',
     timeout: 10000,
-    baseURL: 'http://vseverske.ru/blog/api/'
-};
+  });
 
-export default axiosOption;
+export default axiosInstance

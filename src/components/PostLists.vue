@@ -1,11 +1,11 @@
 <template>
     <div>
 
-        <h1>Названия постов</h1>
-        <ul > 
-            <li v-for="post in posts" :key="post.id" class="item">
-                <router-link :to="{ name: 'PostItem', params: {id: post.id}}">
-                    {{ post.title }} 
+        <h1 class="title">Названия постов</h1>
+        <ul class="post_list"> 
+            <li class="post__item" v-for="post in posts" :key="post.id" >
+                <router-link class="item__link" :to="{ name: 'PostItem', params: {id: post.id}}">
+                  {{ post.title }} 
                 </router-link>
             </li>
         </ul>
@@ -15,7 +15,8 @@
 </template>
 
 <script>
-import axios from 'axios';
+import axiosInstance from '@/axios';
+
 
 export default {
     name: 'PostLists',
@@ -25,28 +26,19 @@ export default {
         }
         },
     async created() {
-        axios.get('http://vseverske.ru/blog/api/posts')
+        axiosInstance.get('/posts')
         .then(response => {
             this.posts = response.data.data;
             console.log(response.data);
         })
         .catch(error => {
-            console.erroe('Ошибка:', error);
+            console.error('Ошибка:', error);
         }
 
         )
 
     
     }
-    
-    
-    
- 
-       //'http://vseverske.ru/blog/api/posts 
-        
-    
-    
-    
         
     }
 
@@ -54,19 +46,34 @@ export default {
 
 </script>
 
-<style scoped>
-    .title {
+<style lang="scss" scoped >
+$text-color: #b10000;
+$title-color: #1d1d1d;
+$title-size: 30px;
+$text-title: 20px;
+
+
+.title {
         text-align: center;
-        color: rgb(255, 180, 193);
-        font-size: 30px;
+        color: $title-color;
+        font-size: $title-size;
     }
-    .item {
-        list-style-type: none;
-        padding: 50px;
-        color: rgb(255, 27, 171)
-        
-    }
-    .lists {
-        padding: 10px;
-    }
+.post_list {
+    text-decoration: none;
+    list-style-type: none;
+    padding: 0 auto;
+}
+.post__item {
+    padding: 20px;
+    font-size: $text-title;
+    
+    
+}
+
+.item__link {
+    text-decoration: none;
+    color: $text-color;
+    cursor: pointer;
+}
+
 </style>

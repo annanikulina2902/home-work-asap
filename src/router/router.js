@@ -14,7 +14,7 @@ export  default new Router({
         routes: [
                 { 
                     path: "/posts", 
-                    name: "PostLists", 
+                    name: "PostsLists", 
                     component: PostLists 
                 },
                 { 
